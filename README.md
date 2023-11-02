@@ -20,9 +20,12 @@ a better version of https://codeberg.org/Mollomm1/W10-On-Github-Codespaces
 
 it's very simple to install.
 
-`git clone https://git.mollomm1.dev/Mollomm1/GamingOnCodespaces`
+```
+git clone https://git.mollomm1.dev/Mollomm1/GamingOnCodespaces
+cd GamingOnCodespaces
+```
 
-`docker build -t GamingOnCodespaces .`
+`docker build -t gamingoncodespaces .`
 
 and after you can do 
-`docker run --name=GamingOnCodespaces -e PUID=1000 -e PGID=1000 --security-opt seccomp=unconfined -e TZ=Etc/UTC -e SUBFOLDER=/ -e TITLE=GamingOnCodespaces -p 3000:3000 --shm-size="2gb" -v $(pwd)/Save:/config --restart unless-stopped GamingOnCodespaces`
+`docker run --name=GamingOnCodespaces -e PUID=1000 -e PGID=1000 --security-opt seccomp=unconfined -e TZ=Etc/UTC -e SUBFOLDER=/ -e TITLE=GamingOnCodespaces -p 3000:3000 --shm-size="2gb" -v $(pwd)/Save:/config --restart unless-stopped gamingoncodespaces`
