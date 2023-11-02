@@ -39,7 +39,8 @@ cd ..
 
 initialise the default Persistance directory
 ```
-cp GamingOnCodespaces/root/config Save
+mkdir Save
+cp -r GamingOnCodespaces/root/config/Desktop Save
 ```
 
 and after you can do 
