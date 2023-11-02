@@ -47,3 +47,5 @@ and after you can do
 ```
 docker run --name=GamingOnCodespaces -e PUID=1000 -e PGID=1000 --security-opt seccomp=unconfined -e TZ=Etc/UTC -e SUBFOLDER=/ -e TITLE=GamingOnCodespaces -p 3000:3000 --shm-size="2gb" -v $(pwd)/Save:/config --restart unless-stopped gamingoncodespaces
 ```
+
+now, everytime you come back to your codespace webtop should start automaticaly
