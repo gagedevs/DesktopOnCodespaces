@@ -1,6 +1,7 @@
 git clone https://git.mollomm1.dev/Mollomm1/GamingOnCodespaces
 cd GamingOnCodespaces
 pip install textual
+sleep 2
 python3 installer.py
 docker build -t gamingoncodespaces .
 cd ..
