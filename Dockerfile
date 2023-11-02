@@ -18,6 +18,8 @@ RUN \
   DEBIAN_FRONTEND=noninteractive \
   apt-get install --no-install-recommends -y \
     dolphin \
+    jq \
+    wget \
     firefox \
     gwenview \
     kde-config-gtk-style \
@@ -38,26 +40,18 @@ RUN \
   echo "**** kde tweaks ****" && \
   sed -i \
     's/applications:org.kde.discover.desktop,/applications:org.kde.konsole.desktop,/g' \
-    /usr/share/plasma/plasmoids/org.kde.plasma.taskmanager/contents/config/main.xml && \
-  echo "**** install wine ****" && \
-  dpkg --add-architecture i386 && \
-  apt-get update && \
-  DEBIAN_FRONTEND=noninteractive \
-  apt-get install -y \
-    wine \
-    wine32 \
-    wget && \
-  mkdir -pm755 /etc/apt/keyrings && \
-  wget -O /etc/apt/keyrings/winehq-archive.key https://dl.winehq.org/wine-builds/winehq.key && \
-  wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/ubuntu/dists/jammy/winehq-jammy.sources && \
-  apt update && \
-  apt install --install-recommends -y winehq-staging && \
-  echo "**** install brave ****" && \
-  apt install -y curl && \
-  curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg && \
-  echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main" | tee /etc/apt/sources.list.d/brave-browser-release.list && \
-  apt update && \
-  apt install -y brave-browser && \
+    /usr/share/plasma/plasmoids/org.kde.plasma.taskmanager/contents/config/main.xml
+
+COPY options.json /
+
+COPY /root /
+
+RUN \
+  chmod +x /installapps.sh && \
+  /installapps.sh && \
+  rm /installapps.sh
+
+RUN \
   echo "**** cleanup ****" && \
   apt-get autoclean && \
   rm -rf \
@@ -65,10 +59,7 @@ RUN \
     /var/lib/apt/lists/* \
     /var/tmp/* \
     /tmp/*
-
-# add local files
-COPY /root /
-
+  
 # ports and volumes
 EXPOSE 3000
 VOLUME /config

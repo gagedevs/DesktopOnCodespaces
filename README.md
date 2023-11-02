@@ -20,34 +20,9 @@ a better version of https://codeberg.org/Mollomm1/W10-On-Github-Codespaces
 
 # Use
 
-it's very simple to install.
+it's very simple to install, there is a pseudo-graphical installer.
 
-clone the repo
+to install just copy and paste this command in your codespace terminal
 ```
-git clone https://git.mollomm1.dev/Mollomm1/GamingOnCodespaces
-cd GamingOnCodespaces
+curl -L https://git.mollomm1.dev/Mollomm1/GamingOnCodespaces/raw/branch/main/install.sh | bash
 ```
-
-
-build the container (take long 5-10 minutes)
-```
-docker build -t gamingoncodespaces .
-```
-
-then go back to your home directory
-```
-cd ..
-```
-
-initialise the default Persistance directory
-```
-mkdir Save
-cp -r GamingOnCodespaces/root/config/* Save
-```
-
-and after you can do 
-```
-docker run --name=GamingOnCodespaces -e PUID=1000 -e PGID=1000 --security-opt seccomp=unconfined -e TZ=Etc/UTC -e SUBFOLDER=/ -e TITLE=GamingOnCodespaces -p 3000:3000 --shm-size="2gb" -v $(pwd)/Save:/config --restart unless-stopped gamingoncodespaces
-```
-
-now, everytime you come back to your codespace webtop should start automaticaly
