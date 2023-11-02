@@ -4,7 +4,7 @@ a better version of https://codeberg.org/Mollomm1/W10-On-Github-Codespaces
 
 > ⚠️ This project is currently a work in progress and is still unfinished. While I'm actively working on it and making progress, there may still be bugs and incomplete features. ⚠️
 
-> it also works on [gitpot](https://gitpod.io/workspaces)
+> it also works on [gitpod](https://gitpod.io/workspaces)
 
 # Supported Stuff
 
