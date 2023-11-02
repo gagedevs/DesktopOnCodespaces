@@ -24,5 +24,7 @@ it's very simple to install, there is a pseudo-graphical installer.
 
 to install just copy and paste this command in your codespace terminal
 ```
-curl -L https://git.mollomm1.dev/Mollomm1/GamingOnCodespaces/raw/branch/main/install.sh | bash
+curl https://git.mollomm1.dev/Mollomm1/GamingOnCodespaces/raw/branch/main/install.sh
+chmod +x install.sh
+./install.sh
 ```
