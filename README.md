@@ -26,6 +26,7 @@ a better version of https://codeberg.org/Mollomm1/W10-On-Github-Codespaces
 
 it's very simple to install, there is a pseudo-graphical installer.
 
+first start a new codespace https://github.com/codespaces/new
 to install just copy and paste this command in your codespace terminal
 ```
 curl -O https://git.mollomm1.dev/Mollomm1/GamingOnCodespaces/raw/branch/main/install.sh
