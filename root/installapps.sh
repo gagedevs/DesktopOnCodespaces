@@ -23,6 +23,10 @@ if jq ".programming | contains([1])" "$json_file" | grep -q true; then
     chmod +x /installable-apps/openjdk-17-jre.sh
     /installable-apps/openjdk-17-jre.sh
 fi
+if jq ".programming | contains([2])" "$json_file" | grep -q true; then
+    chmod +x /installable-apps/vscodium.sh
+    /installable-apps/vscodium.sh
+fi
 
 if jq ".apps | contains([0])" "$json_file" | grep -q true; then
     chmod +x /installable-apps/vlc.sh
@@ -39,6 +43,10 @@ fi
 if jq ".apps | contains([3])" "$json_file" | grep -q true; then
     chmod +x /installable-apps/aqemu.sh
     /installable-apps/aqemu.sh
+fi
+if jq ".apps | contains([4])" "$json_file" | grep -q true; then
+    chmod +x /installable-apps/discord.sh
+    /installable-apps/discord.sh
 fi
 
 # clean stuff

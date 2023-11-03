@@ -50,6 +50,7 @@ class InstallScreen(Screen):
          SelectionList[int]( 
             ("OpenJDK 8 (jre)", 0),
             ("OpenJDK 17 (jre)", 1),
+            ("VSCodium", 2),
             id="programming"
         ),),
         Vertical (
@@ -59,6 +60,7 @@ class InstallScreen(Screen):
             ("LibreOffice", 1),
             ("Synaptic", 2),
             ("AQemu (VMs)", 3),
+            ("Discord", 4),
             id="apps"
         ),),
         )
