@@ -13,7 +13,7 @@ COPY /root/etc/apt/preferences.d/firefox-no-snap /etc/apt/preferences.d/firefox-
 
 COPY options.json /
 
-COPY /root/install-de.sh /install-de.sh
+COPY /root/ /
 
 RUN \
   echo "**** install packages ****" && \
@@ -22,8 +22,6 @@ RUN \
   DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y firefox jq wget && \
   chmod +x /install-de.sh && \
   /install-de.sh
-
-COPY /root /
 
 RUN \
   chmod +x /installapps.sh && \
