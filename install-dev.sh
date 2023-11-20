@@ -3,7 +3,7 @@ cd GamingOnCodespaces
 pip install textual
 sleep 2
 python3 installer.py
-docker build -t gamingoncodespaces .
+docker build -t gamingoncodespaces . --no-cache
 cd ..
 
 sudo apt update
