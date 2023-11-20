@@ -30,7 +30,7 @@ InstallHead="""
 # GamingOnCodespaces Installer
 """     
 
-LINES = ["KDE Plasma (Heavy)", "XFCE4 (Lightweight)", "Mate (Mid)", "I3 (Very Lightweight)", "Openbox (Very Lightweight)"]
+LINES = ["KDE Plasma (Heavy)", "XFCE4 (Lightweight)", "I3 (Very Lightweight)"]
 
 class InstallScreen(Screen):
     CSS_PATH = "installer.tcss"

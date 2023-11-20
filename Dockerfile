@@ -11,38 +11,17 @@ ARG DEBIAN_FRONTEND="noninteractive"
 # prevent Ubuntu's firefox stub from being installed
 COPY /root/etc/apt/preferences.d/firefox-no-snap /etc/apt/preferences.d/firefox-no-snap
 
+COPY options.json /
+
+COPY /root/install-de.sh /install-de.sh
+
 RUN \
   echo "**** install packages ****" && \
   add-apt-repository -y ppa:mozillateam/ppa && \
   apt-get update && \
-  DEBIAN_FRONTEND=noninteractive \
-  apt-get install --no-install-recommends -y \
-    dolphin \
-    jq \
-    wget \
-    firefox \
-    gwenview \
-    kde-config-gtk-style \
-    kdialog \
-    kfind \
-    khotkeys \
-    kio-extras \
-    knewstuff-dialog \
-    konsole \
-    ksystemstats \
-    kwin-addons \
-    kwin-x11 \
-    kwrite \
-    plasma-desktop \
-    plasma-workspace \
-    qml-module-qt-labs-platform \
-    systemsettings && \
-  echo "**** kde tweaks ****" && \
-  sed -i \
-    's/applications:org.kde.discover.desktop,/applications:org.kde.konsole.desktop,/g' \
-    /usr/share/plasma/plasmoids/org.kde.plasma.taskmanager/contents/config/main.xml
-
-COPY options.json /
+  DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y firefox jq wget && \
+  chmod +x /install-de.sh && \
+  /install-de.sh
 
 COPY /root /
 
