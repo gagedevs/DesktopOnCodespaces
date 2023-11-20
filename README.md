@@ -33,3 +33,9 @@ curl -O https://git.mollomm1.dev/Mollomm1/GamingOnCodespaces/raw/branch/main/ins
 chmod +x install.sh
 ./install.sh
 ```
+for dev branch (unstable)
+```
+curl -O https://git.mollomm1.dev/Mollomm1/GamingOnCodespaces/raw/branch/dev/install-dev.sh
+chmod +x install.sh
+./install.sh
+```
