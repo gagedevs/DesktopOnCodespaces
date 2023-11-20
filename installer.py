@@ -29,7 +29,9 @@ It Actually Have
 InstallHead="""
 # GamingOnCodespaces Installer
 """     
-        
+
+LINES = ["KDE Plasma (Heavy)", "XFCE4 (Lightweight)", "Mate (Mid)", "I3 (Very Lightweight)", "Openbox (Very Lightweight)"]
+
 class InstallScreen(Screen):
     CSS_PATH = "installer.tcss"
 
@@ -67,8 +69,8 @@ class InstallScreen(Screen):
 
         yield Vertical (
          Horizontal(
-            Label("\nEnable KVM (Required For AQemu) :"),
-            Switch(value=False, id="enablekvm"),
+            Label("\nDesktop Environement :"),
+            Select(id="de", value="KDE Plasma (Heavy)", options=((line, line) for line in LINES)),
         ),)
         yield Horizontal (
             Button.error("Back", id="back"),
@@ -78,7 +80,7 @@ class InstallScreen(Screen):
         if event.button.id == "back":
             app.pop_screen()
         if event.button.id == "in":
-            data = {"defaultapps": self.query_one("#defaultapps").selected, "programming": self.query_one("#programming").selected, "apps": self.query_one("#apps").selected, "enablekvm": self.query_one("#enablekvm").value}
+            data = {"defaultapps": self.query_one("#defaultapps").selected, "programming": self.query_one("#programming").selected, "apps": self.query_one("#apps").selected, "enablekvm": True, "DE": self.query_one("#de").value}
             savejson(data)
             app.exit()
 
@@ -101,3 +103,4 @@ class InstallApp(App):
 if __name__ == "__main__":
     app = InstallApp()
     app.run()
+
