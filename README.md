@@ -1,10 +1,8 @@
 # DesktopOnCodespaces (Beta)
 
-<img src="https://i.imgur.com/bPFofl2.png" style="width:300px;"/><img src="https://i.imgur.com/kxqd2VT.png" style="width:300px;"/>
+<img src="https://i.imgur.com/z7M2iir.png" style="width:300px;"/><img src="https://i.imgur.com/4ZDkV4M.png" style="width:300px;"/>
 
 <img src="https://i.imgur.com/QE7V9bp.png" style="width:375px;"/>
-
-a better version of https://codeberg.org/Mollomm1/W10-On-Github-Codespaces
 
 > ⚠️ This project is currently a work in progress and is still unfinished. While I'm actively working on it and making progress, there may still be bugs and incomplete features. ⚠️
 
