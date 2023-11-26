@@ -1,4 +1,4 @@
-# GamingOnCodespaces (Beta)
+# DesktopOnCodespaces (Beta)
 
 <img src="https://i.imgur.com/bPFofl2.png" style="width:300px;"/><img src="https://i.imgur.com/kxqd2VT.png" style="width:300px;"/>
 
@@ -29,13 +29,13 @@ it's very simple to install, there is a pseudo-graphical installer.
 first start a new codespace https://github.com/codespaces/new
 to install just copy and paste this command in your codespace terminal
 ```
-curl -O https://git.mollomm1.dev/Mollomm1/GamingOnCodespaces/raw/branch/main/install.sh
+curl -O https://git.mollomm1.dev/Mollomm1/DesktopOnCodespaces/raw/branch/main/install.sh
 chmod +x install.sh
 ./install.sh
 ```
 for dev branch (unstable)
 ```
-curl -O https://git.mollomm1.dev/Mollomm1/GamingOnCodespaces/raw/branch/dev/install-dev.sh
+curl -O https://git.mollomm1.dev/Mollomm1/DesktopOnCodespaces/raw/branch/dev/install-dev.sh
 chmod +x install-dev.sh
 ./install-dev.sh
 ```
